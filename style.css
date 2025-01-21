@@ -1,0 +1,295 @@
+/* Start Screen Styles */
+#start-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+    color: white;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+#start-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#start-btn {
+    font-size: 24px;
+    padding: 15px 30px;
+    background-color: #f9d71c;
+    color: #333;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+#start-btn:hover {
+    background-color: #ffd700;
+}
+
+/* General body styling */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Game container */
+#game-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 400px;
+    height: 90%;
+    background: #333;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Canvas styling */
+#gameCanvas {
+    background: linear-gradient(to bottom, #111, #222);
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-left: 5px solid #f9d71c;
+    border-right: 5px solid #f9d71c;
+    position: relative;
+    z-index: 1;
+}
+
+/* Road Markings */
+#gameCanvas:before,
+#gameCanvas:after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0%,
+        white 10%,
+        transparent 10%,
+        transparent 20%
+    );
+    z-index: 2;
+}
+
+#gameCanvas:before {
+    left: 33.33%;
+}
+
+#gameCanvas:after {
+    right: 33.33%;
+}
+
+/* Control buttons */
+.control-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 50px;
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #f9d81cef;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #ffd700;
+}
+
+#left-btn {
+    left: 5%;
+}
+
+#right-btn {
+    right: 5%;
+}
+
+/* Bottom controls */
+#bottom-controls {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9d71c;
+    color: #333;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ffd700;
+}
+
+/* Score display */
+#score {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+    color: #f9d71c;
+    font-weight: bold;
+}
+
+/* Road Dash Animation */
+@keyframes dash-animation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    #game-container {
+        max-width: 90%;
+        height: 90%;
+    }
+
+    .control-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    #score {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #game-container {
+        width: 95%;
+        height: 75%;
+    }
+
+    .control-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    #score {
+        font-size: 16px;
+    }
+    #bottom-controls {
+        height: 50px;
+        top: 10px;
+    }
+    #pause-btn{
+        width: 50px;
+    }
+    #restart-btn{
+        width: 50px;
+    }
+}
+
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #333;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    animation: modal-appear 0.5s ease-in-out;
+}
+
+.modal h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.modal p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.modal button {
+    padding: 10px 20px;
+    background-color: #f9d71c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+    background-color: #ffd700;
+}
+
+/* Animation for modal appearance */
+@keyframes modal-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

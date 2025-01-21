@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Car Racing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <button id="left-btn" class="control-btn"><</button>
+        <button id="right-btn" class="control-btn">></button>
+        <canvas id="gameCanvas"></canvas>
+    </div>
+    <div id="score">Score: 0</div>
+    <div id="bottom-controls">
+        <button id="pause-btn">⏸️</button>
+        <button id="restart-btn">🔄</button>
+    </div>
+
+      <!-- Game Over Modal -->
+      <div id="game-over-modal" class="modal">
+        <div class="modal-content">
+            <h2>Game Over</h2>
+            <p id="final-score">Your Score: 0</p>
+            <button id="restart-modal-btn">Play Again</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
